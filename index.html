@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ar">
+  <html dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تحقق VIN</title>
+    
+    <!-- ربط ملف الـ CSS الخارجي -->
+    <link rel="stylesheet" href="style.css"> 
+    
+    <!-- مكتبة التنبيهات -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> 
+    
+    <!-- مكتبة PDF -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script> 
+    
+    <!-- مكتبة autoTable -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.22/jspdf.plugin.autotable.min.js"></script>
+    
+</head>
+
+<body>
+<!-- تضمين فيديو Dropbox مع التشغيل التلقائي والتكرار -->
+<video autoplay muted loop playsinline width="620" height="230">
+    <source src="https://www.dropbox.com/scl/fi/4rtn2ekk68px16kjqorux/logo3-2.mp4?rlkey=yobbgaxjspxao7q9rui1h2nbo&raw=1" type="video/mp4">
+    متصفحك لا يدعم عرض الفيديو.
+</video>
+
+    <!-- التاريخ والوقت -->
+    <div class="datetime" id="datetime"></div>
+<!-- الشعار المتحرك -->
+<div class="logo-container">
+    <img src="https://www.dropbox.com/scl/fi/kipcwrnb6132qxzso2jif/logo.png?rlkey=2uiwvabrhty7st9z29h3fr2om&raw=1" alt="شعار" class="logo">
+</div>
+
+    <div class="container">
+        <!-- نص الآية -->
+        <div style="background-color: #000080; padding: 10px; border-radius: 40px; margin-bottom: 10px;">
+            <p style="font-size: 20px; text-align: center; color: white;">
+                <span style="color: yellow; font-weight: bold; display: block; text-align: center;">
+                    وَأَنْزَلْنَا الْحَدِيدَ فِيهِ بَأْسٌ شَدِيدٌ وَمَنَافِعُ لِلنَّاسِ
+                </span>
+            </p>
+        </div>
+
+        <!-- محتوى التطبيق -->
+        <div class="container1">
+            <h1>نظام التحقق من VIN</h1>
+            
+            <!-- إدخال رقم VIN -->
+            <input type="text" id="vinInput" placeholder="أدخل رقم VIN">
+          
+            <!-- الأزرار -->
+            <button id="checkButton" onclick="checkVIN()">تحقق</button>
+            <button id="exportButton" onclick="generatePDF()">تصدير تقرير</button>
+        </div>
+    </div>
+
+    <!-- ملف JavaScript -->
+    <script type="module" src="script.js"></script> <!-- تأكد من إضافة type="module" -->
+</body>
+</html>
